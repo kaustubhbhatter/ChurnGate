@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChurnGate - AI Retention Intelligence</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Churn<span>Gate</span></div>
+                <nav>
+                    <a href="#how">How It Works</a>
+                    <a href="#industries">Industries</a>
+                    <a href="#use-cases">Use Cases</a>
+                    <a href="#benefits">Benefits</a>
+                    <a href="#simulation">Live Demo</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="maker-badge">🚀 Built by Kaustubh Bhatter | Product + AI</div>
+                    <h1>Prevent Churn<br/><span>Before It Happens</span></h1>
+                    <p>ChurnGate analyzes user behavior in real-time using AI to identify at-risk students and generate personalized retention emails automatically.</p>
+                    <a href="#simulation" class="cta-button">Try Live Demo</a>
+                </div>
+
+                <div class="hero-graphic">
+                    <div class="graphic-box">
+                        <div class="graphic-item">
+                            <div class="graphic-icon">📊</div>
+                            <div class="graphic-label">User Events</div>
+                        </div>
+                        <div class="graphic-arrow">→</div>
+                        <div class="graphic-item">
+                            <div class="graphic-icon">🧠</div>
+                            <div class="graphic-label">AI Analysis</div>
+                        </div>
+                        <div class="graphic-arrow">→</div>
+                        <div class="graphic-item">
+                            <div class="graphic-icon">📧</div>
+                            <div class="graphic-label">Action</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-it-works" id="how">
+        <div class="container">
+            <h2 class="section-title">How ChurnGate Works</h2>
+
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">📊</div>
+                    <h3>Monitor Activity</h3>
+                    <p>ChurnGate continuously analyzes user events to detect behavioral patterns that indicate churn risk.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">🧠</div>
+                    <h3>AI Diagnosis</h3>
+                    <p>Our LLM identifies the specific barrier: procrastination, pricing, or value gap. Each gets a different intervention.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">📧</div>
+                    <h3>Send & Measure</h3>
+                    <p>Generate personalized emails and track which interventions convert best.</p>
+                </div>
+            </div>
+
+            <div class="flow-diagram">
+                <div class="flow-container">
+                    <div class="flow-item">
+                        <div class="flow-box">User Events</div>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-item">
+                        <div class="flow-box">Google Sheets</div>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-item">
+                        <div class="flow-box">n8n</div>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-item">
+                        <div class="flow-box">GPT-4o</div>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-item">
+                        <div class="flow-box">Email</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INDUSTRIES -->
+    <section class="industries-section" id="industries">
+        <div class="container">
+            <h2 class="section-title">Works Across Every Industry</h2>
+            <p class="section-subtitle">Click on any industry to see how ChurnGate helps</p>
+        </div>
+        
+        <div class="industries-grid">
+            <div class="industry-card" data-industry="edtech">
+                <div class="industry-icon">📚</div>
+                <div class="industry-name">EdTech</div>
+                <div class="industry-subtitle-small">Student Activation</div>
+            </div>
+
+            <div class="industry-card" data-industry="saas">
+                <div class="industry-icon">💼</div>
+                <div class="industry-name">B2B SaaS</div>
+                <div class="industry-subtitle-small">Trial-to-Paid</div>
+            </div>
+
+            <div class="industry-card" data-industry="healthtech">
+                <div class="industry-icon">🏥</div>
+                <div class="industry-name">HealthTech</div>
+                <div class="industry-subtitle-small">Patient Retention</div>
+            </div>
+
+            <div class="industry-card" data-industry="fintech">
+                <div class="industry-icon">💳</div>
+                <div class="industry-name">Fintech</div>
+                <div class="industry-subtitle-small">Card Usage Churn</div>
+            </div>
+
+            <div class="industry-card" data-industry="gaming">
+                <div class="industry-icon">🎮</div>
+                <div class="industry-name">Gaming</div>
+                <div class="industry-subtitle-small">Player Engagement</div>
+            </div>
+
+            <div class="industry-card" data-industry="ecommerce">
+                <div class="industry-icon">🛒</div>
+                <div class="industry-name">E-Commerce</div>
+                <div class="industry-subtitle-small">Cart Abandonment</div>
+            </div>
+
+            <div class="industry-card" data-industry="creators">
+                <div class="industry-icon">📱</div>
+                <div class="industry-name">Creator Platforms</div>
+                <div class="industry-subtitle-small">Creator Dropout</div>
+            </div>
+
+            <div class="industry-card" data-industry="fitness">
+                <div class="industry-icon">🏋️</div>
+                <div class="industry-name">Fitness</div>
+                <div class="industry-subtitle-small">Membership Renewal</div>
+            </div>
+        </div>
+
+        <!-- Industry Detail Modal -->
+        <div class="industry-modal" id="industryModal">
+            <div class="modal-overlay" onclick="closeIndustryModal()"></div>
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeIndustryModal()">✕</button>
+                <div class="modal-header">
+                    <div class="modal-icon" id="modalIcon"></div>
+                    <div>
+                        <h3 id="modalTitle"></h3>
+                        <p id="modalSubtitle"></p>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div id="modalDescription"></div>
+                </div>
+                <div class="modal-footer">
+                    <button class="modal-cta" onclick="closeIndustryModal()">Got It</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- USE CASES -->
+    <section class="use-cases-section" id="use-cases">
+        <div class="container">
+            <h2 class="section-title">How I Helped Sharpener Tech</h2>
+
+            <div class="use-case-grid">
+                <div class="use-case-card">
+                    <div class="use-case-icon">📈</div>
+                    <div class="use-case-title">W4 Retention</div>
+                    <div class="use-case-description">
+                        Identified 847 at-risk students from a cohort of 12,403 in Week 2. Deployed targeted interventions within 24 hours using personalized email campaigns.
+                    </div>
+                    <div class="use-case-result">58% → 67% retention (+9pp)</div>
+                </div>
+
+                <div class="use-case-card">
+                    <div class="use-case-icon">💰</div>
+                    <div class="use-case-title">LTV Impact</div>
+                    <div class="use-case-description">
+                        Prevented churn for high-value paid users (annual plans). Converted free-to-paid users by diagnosing price friction before they left.
+                    </div>
+                    <div class="use-case-result">$120K+ annual revenue saved</div>
+                </div>
+
+                <div class="use-case-card">
+                    <div class="use-case-icon">🎯</div>
+                    <div class="use-case-title">Barrier-Specific Emails</div>
+                    <div class="use-case-description">
+                        Procrastinators got urgency emails. Price-sensitive users got bridge offers. Value-confused users got transformation roadmaps.
+                    </div>
+                    <div class="use-case-result">3x higher CTR vs. generic emails</div>
+                </div>
+
+                <div class="use-case-card">
+                    <div class="use-case-icon">⚙️</div>
+                    <div class="use-case-title">Operational Efficiency</div>
+                    <div class="use-case-description">
+                        Fully automated. No manual analysis, no email copy writing. Runs daily on a scheduled n8n workflow. Zero maintenance.
+                    </div>
+                    <div class="use-case-result">50+ hours/month saved</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section class="benefits-section" id="benefits">
+        <div class="container">
+            <h2 class="section-title">Why ChurnGate Wins</h2>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <div class="benefit-title">Barrier-Specific Interventions</div>
+                    <div class="benefit-description">Not all churn is the same. Different barriers need different solutions. One-size-fits-all retention fails.</div>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <div class="benefit-title">Real-Time Detection</div>
+                    <div class="benefit-description">Identify at-risk users within hours of risk signal. Act before they've made up their minds to leave.</div>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤖</div>
+                    <div class="benefit-title">AI-Generated Copy</div>
+                    <div class="benefit-description">GPT-4o writes personalized emails at scale. No template limitations. Every email feels human and targeted.</div>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">📊</div>
+                    <div class="benefit-title">Data-Driven Insights</div>
+                    <div class="benefit-description">Understand what's killing your users. Not guesses. Real behavior patterns backed by event data.</div>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔄</div>
+                    <div class="benefit-title">Fully Automated</div>
+                    <div class="benefit-description">No manual work. No human bottlenecks. Runs daily. Scales to thousands of users without effort.</div>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">💵</div>
+                    <div class="benefit-title">Immediate ROI</div>
+                    <div class="benefit-description">Save $100K+ in annual LTV. One email campaign. One churn-at-risk cohort. Measurable impact.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SIMULATION -->
+    <section class="simulation-section" id="simulation">
+        <div class="container">
+            <h2 class="section-title">Live Simulation</h2>
+
+            <div class="simulation-container">
+                <div class="simulation-header">
+                    <div class="simulation-icon">⚙️</div>
+                    <div>
+                        <div class="simulation-title">Churn Risk Analyzer</div>
+                        <div class="simulation-subtitle">Select a student profile and see the analysis</div>
+                        <div class="simulated-badge">📌 Using Simulated Data</div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <div class="control-group">
+                        <label class="control-label">Student Profile</label>
+                        <select id="profileSelect" onchange="handleProfileChange()">
+                            <option value="">-- Select a Profile --</option>
+                            <option value="procrastinator">Rahul Singh (Procrastinator)</option>
+                            <option value="price_friction">Priya Sharma (Price Friction)</option>
+                            <option value="value_gap">Arjun Patel (Value Gap)</option>
+                            <option value="low_engagement">Neha Gupta (Low Engagement)</option>
+                            <option value="feature_confusion">Aditya Verma (Feature Confusion)</option>
+                            <option value="time_constraint">Zara Khan (Time Constraint)</option>
+                        </select>
+                    </div>
+                    <button class="run-button" id="analyzeBtn" onclick="runAnalysis()">▶ Run Analysis</button>
+                </div>
+
+                <div class="results-area" id="resultsArea">
+                    <div class="pipeline">
+                        <div class="pipeline-step" id="step1">
+                            <div class="step-label">Step 1</div>
+                            <div class="step-content">Fetching Events</div>
+                        </div>
+                        <div class="pipeline-step" id="step2">
+                            <div class="step-label">Step 2</div>
+                            <div class="step-content">Detect Signals</div>
+                        </div>
+                        <div class="pipeline-step" id="step3">
+                            <div class="step-label">Step 3</div>
+                            <div class="step-content">AI Reasoning</div>
+                        </div>
+                        <div class="pipeline-step" id="step4">
+                            <div class="step-label">Step 4</div>
+                            <div class="step-content">Results</div>
+                        </div>
+                    </div>
+
+                    <!-- Events Stream -->
+                    <div id="eventsStreamContainer" style="display: none;">
+                        <div style="font-size: 12px; font-weight: 600; color: #3b82f6; margin-bottom: 8px; text-transform: uppercase;">📊 Events Timeline</div>
+                        <div class="events-stream" id="eventsStream"></div>
+                    </div>
+
+                    <!-- Reasoning Section -->
+                    <div class="reasoning-section" id="reasoningSection">
+                        <div class="reasoning-title">🧠 AI Reasoning</div>
+                        <div class="reasoning-content" id="reasoningContent"></div>
+                    </div>
+
+                    <div class="results-grid" id="resultsGrid" style="display: none;">
+                        <div class="result-card">
+                            <div class="result-label">Risk Level</div>
+                            <div class="result-value" id="riskLevel">High</div>
+                            <div class="result-description" id="riskDesc">User at immediate churn risk</div>
+                        </div>
+
+                        <div class="result-card">
+                            <div class="result-label">Churn Category</div>
+                            <div class="result-value" id="barrier">Price Friction</div>
+                            <div class="result-description" id="barrierDesc">Specific reason for churn</div>
+                        </div>
+                    </div>
+
+                    <!-- Intervention Section -->
+                    <div class="intervention-section" id="interventionSection">
+                        <div class="intervention-title">✅ Recommended Intervention</div>
+                        <div class="intervention-method">
+                            <div class="method-badge recommended">📧 Email (Recommended)</div>
+                        </div>
+                        <div class="email-section" id="emailSection">
+                            <div class="email-header">📧 AI-Generated Email Draft</div>
+                            <div class="email-content" id="emailContent"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>ChurnGate • Built with AI & Product Strategy | Kaustubh Bhatter © 2025</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
