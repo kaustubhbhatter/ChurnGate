@@ -450,21 +450,83 @@ function showResults(profile) {
     const resultsGrid = document.getElementById('resultsGrid');
     const interventionSection = document.getElementById('interventionSection');
     
+    // 1. Populate basic text data
     document.getElementById('riskLevel').textContent = profile.risk;
     document.getElementById('riskDesc').textContent = profile.riskDesc;
     document.getElementById('barrier').textContent = profile.barrier;
     document.getElementById('barrierDesc').textContent = profile.barrierDesc;
     document.getElementById('emailContent').textContent = profile.email;
 
-    // Update risk styling
+    // 2. Update Risk Card Styling
     const riskCard = resultsGrid.querySelector('.result-card');
-    riskCard.className = 'result-card';
+    riskCard.className = 'result-card'; // Reset classes
     if (profile.risk === 'HIGH') {
         riskCard.classList.add('risk-high');
     } else {
         riskCard.classList.add('risk-medium');
     }
 
+    // 3. Handle Intervention Logic (Email vs Sales/Slack)
+    const badge = interventionSection.querySelector('.method-badge');
+    const emailHeader = interventionSection.querySelector('.email-header');
+    const emailSection = document.getElementById('emailSection');
+    
+    // Clean up any existing Slack notification from previous runs
+    const existingSlack = document.getElementById('slackNotification');
+    if (existingSlack) existingSlack.remove();
+
+    if (profile.risk === 'HIGH') {
+        // --- HIGH RISK: SALES INTERVENTION ---
+        
+        // Update Badge to Red/Warning
+        badge.textContent = "🚨 Slack Alert Sent to Sales (Intervention Recommended)";
+        // Apply inline styles to override default success colors
+        badge.style.backgroundColor = "rgba(220, 38, 38, 0.1)"; 
+        badge.style.color = "#dc2626";
+        badge.style.borderColor = "#dc2626";
+
+        // Update Email Header to indicate it's secondary
+        emailHeader.textContent = "⚠️ Email Draft (Paused for Sales Review)";
+
+        // Create Slack Notification HTML with inline styles
+        const slackHTML = `
+            <div id="slackNotification" style="background: white; border: 1px solid #e5e7eb; border-left: 5px solid #E01E5A; border-radius: 8px; padding: 16px; margin-bottom: 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                <div style="display: flex; align-items: center; margin-bottom: 8px; font-size: 13px; color: #616061;">
+                    <span style="font-weight: 800; color: #1d1c1d; margin-right: 8px;">#</span>
+                    <span style="font-weight: 600; color: #1d1c1d;">churn-alerts-high-risk</span>
+                    <span style="margin-left: 8px;">Just now</span>
+                </div>
+                <div style="display: flex; gap: 12px;">
+                    <div style="width: 36px; height: 36px; min-width: 36px; background: #36C5F0; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 20px;">🤖</div>
+                    <div>
+                        <div style="font-weight: 700; color: #1d1c1d; font-size: 14px;">ChurnGate Bot <span style="background: #ddd; font-size: 10px; padding: 1px 4px; border-radius: 2px; color: #555; font-weight: normal; vertical-align: middle; margin-left: 4px;">APP</span></div>
+                        <div style="font-size: 14px; color: #1d1c1d; margin-top: 4px; line-height: 1.4;">
+                            <span style="color: #E01E5A; font-weight: 700;">🚨 HIGH RISK DETECTED</span><br>
+                            User is facing <strong>${profile.barrier}</strong>. Email automation paused.<br>
+                            <a href="#" style="color: #1264a3; text-decoration: none;">@sales-team</a> please intervene immediately.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        // Inject Slack HTML *before* the email section
+        emailSection.insertAdjacentHTML('beforebegin', slackHTML);
+
+    } else {
+        // --- MEDIUM/LOW RISK: EMAIL ---
+        
+        // Reset Badge to original Success/Teal style
+        badge.textContent = "📧 Email (Recommended)";
+        badge.style.backgroundColor = ""; // Removes inline override, falls back to CSS class
+        badge.style.color = "";
+        badge.style.borderColor = "";
+
+        // Reset Email Header
+        emailHeader.textContent = "📧 AI-Generated Email Draft";
+    }
+
+    // 4. Show the results container
     resultsGrid.style.display = 'grid';
     interventionSection.classList.add('show');
 }
